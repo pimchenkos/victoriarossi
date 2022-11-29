@@ -1,0 +1,45 @@
+{% extends 'frontend/main.html' %}
+
+{% block title %}
+{{ title }}
+{% endblock title %}
+
+{% block content %}
+{% if user.is_staff %}
+<center>
+    <form action="{% url 'news-add' %}">
+        <button class="btnSignUp">Добавить статью</button>
+    </form>
+</center>
+{% endif %}
+{% for post in article %}
+<div class="article alert alert-light">
+    <h2><a href="{% url 'news-detail' post.id %}">{{ post.title }}</a></h2>
+    <p><span class="text-muted">{{ post.date }}</span></p>
+    <img style="width:250px;" src="{{ post.image.url }}"/>
+    <p>{% autoescape off %} {{ post.text|striptags|truncatechars:500 }} {% endautoescape %}</p>
+</div>
+{% endfor %}
+<div class="paginator">
+{% if is_paginated %}
+{% if page_obj.has_previous %}
+<a href="/news" class="btn">Начало</a>
+<!--<a href="?page={{ page_obj.previous_page_number }}" class="btn btn-outline-warning">Предыдущая</a>-->
+{% endif %}
+
+<!--Начало Предыдущая 2 3 4 5 6 Следующая Последняя-->
+{% for num in page_obj.paginator.page_range %}
+{% if num == page_obj.number %}
+<button class="btn btn-current-page">{{ num }}</button>
+{% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+<a href="?page={{ num }}" class="btn">{{ num }}</a>
+{% endif %}
+{% endfor %}
+
+{% if page_obj.has_next %}
+<!--<a href="?page={{ page_obj.next_page_number }}" class="btn btn-outline-warning">Следующая</a>-->
+<a href="?page={{ page_obj.paginator.num_pages }}" class="btn">Последняя</a>
+{% endif %}
+{% endif %}
+</div>
+{% endblock content %}

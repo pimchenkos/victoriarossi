@@ -1,0 +1,300 @@
+{% extends 'frontend/main.html' %}
+{% load static %}
+
+{% block title %}
+    Victoria Rossi - коррекция и окрашивание бровей
+{% endblock title %}
+
+{% block class %}
+    class="BackgroundImage"
+{% endblock class %}
+
+{% block content %}
+
+    <div id="citationWithPicture">
+        <div id="citationOne"><img src="{% static 'main/image/citationOne.png' %}"></div>
+        <div id="pictureOne"><img class="imageBorder" src="{% static 'main/image/pictureOne.jpg' %}"></div>
+    </div>
+
+    <div id="parallaxOne">
+        <img src="{% static 'main/image/parallaxTextOne.png' %}">
+    </div>
+
+    <div id="ServicesOne" class="container">
+        <img src="{% static 'main/image/ServicesOnePictureOne.png' %}">
+        <img src="{% static 'main/image/ServicesOnePictureTwo.png' %}">
+        <img src="{% static 'main/image/ServicesOnePictureThree.png' %}">
+        <img src="{% static 'main/image/ServicesOnePictureFour.png' %}">
+    </div>
+
+    <div id="parallaxTwo">
+        <img src="{% static 'main/image/parallaxTextTwo.png' %}">
+    </div>
+
+    <div id="descriptionOne">
+        <img src="{% static 'main/image/descriptionOneImg.png' %}">
+        <p>Опираясь на ваши черты лица, характер и предпочтения,<br>я создаю каждой свой неповторимый взгляд.</p>
+    </div>
+
+    <div id="starsPhotoHeader">
+        <img src="{% static 'main/image/starsPhotoHeader.png' %}">
+    </div>
+
+    <div id="starsPhoto" class="container">
+        <figure class="figure">
+            <img class="imageBorder" src="{% static 'main/image/starsPhotoOne.jpg' %}"
+                 class="figure-img img-fluid rounded">
+            <figcaption class="figure-caption text-center">Кара Делевинь</figcaption>
+        </figure>
+        <figure class="figure">
+            <img class="imageBorder" src="{% static 'main/image/starsPhotoTwo.jpg' %}"
+                 class="figure-img img-fluid rounded">
+            <figcaption class="figure-caption text-center">Лили Колинз</figcaption>
+        </figure>
+        <figure class="figure">
+            <img class="imageBorder" src="{% static 'main/image/starsPhotoThree.jpg' %}"
+                 class="figure-img img-fluid rounded">
+            <figcaption class="figure-caption text-center">Наталья Водянова</figcaption>
+        </figure>
+        <figure class="figure">
+            <img class="imageBorder" src="{% static 'main/image/starsPhotoFour.jpg' %}"
+                 class="figure-img img-fluid rounded">
+            <figcaption class="figure-caption text-center">Эмилия Кларк</figcaption>
+        </figure>
+    </div>
+
+    <div class="accordion">
+        <h1>Часто задаваемые вопросы</h1>
+        <div class="accordion-item">
+            <a href="#" class="heading">
+                <div class="icon"></div>
+                <div class="title">Сколько держится на коже краска/хна?</div>
+            </a>
+            <div class="content">
+                <p>
+                    Краска держится на коже до 4-х дней, хна до двух недель, а на волосках до 6 недель.
+                </p>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <a href="#" class="heading">
+                <div class="icon"></div>
+                <div class="title">Через какой интервал времени можно повторять процедуру?</div>
+            </a>
+            <div class="content">
+                <p>
+                    Окрашивание не ранее чем через месяц, долговременную укладку через 1-1,5 месяца.
+                </p>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <a href="#" class="heading">
+                <div class="icon"></div>
+                <div class="title">Можно ли стричь брови?</div>
+            </a>
+            <div class="content">
+                <p>
+                    Категорически нет.
+                </p>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <a href="#" class="heading">
+                <div class="icon"></div>
+                <div class="title">Долговременную укладку можно делать всем?</div>
+            </a>
+            <div class="content">
+                <p>
+                    Нет, ДУ является противопоказанной для очень тонких, коротких (от природы) и подстриженных волосков.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div id="sliderHeader">
+        <h3>Мои работы</h3>
+    </div>
+    <!-- owlCarousel -->
+    <div class="owl-carousel owl-theme slider" id="slider">
+        <div class="sliderItem">
+            <a data-fancybox="images" href="{% static 'main/image/brows1.jpg' %}">
+                <img src="{% static 'main/image/brows1.jpg' %}">
+            </a>
+        </div>
+        <div class="sliderItem">
+            <a data-fancybox="images" href="{% static 'main/image/brows2.jpg' %}">
+                <img src="{% static 'main/image/brows2.jpg' %}">
+            </a>
+        </div>
+        <div class="sliderItem">
+            <a data-fancybox="images" href="{% static 'main/image/brows3.jpg' %}">
+                <img src="{% static 'main/image/brows3.jpg' %}">
+            </a>
+        </div>
+        <div class="sliderItem">
+            <a data-fancybox="images" href="{% static 'main/image/brows4.jpg' %}">
+                <img src="{% static 'main/image/brows4.jpg' %}">
+            </a>
+        </div>
+        <div class="sliderItem">
+            <a data-fancybox="images" href="{% static 'main/image/brows5.jpg' %}">
+                <img src="{% static 'main/image/brows5.jpg' %}">
+            </a>
+        </div>
+        <div class="sliderItem">
+            <a data-fancybox="images" href="{% static 'main/image/brows6.jpg' %}">
+                <img src="{% static 'main/image/brows6.jpg' %}">
+            </a>
+        </div>
+        <div class="sliderItem">
+            <a data-fancybox="images" href="{% static 'main/image/brows7.jpg' %}">
+                <img src="{% static 'main/image/brows7.jpg' %}">
+            </a>
+        </div>
+        <div class="sliderItem">
+            <a data-fancybox="images" href="{% static 'main/image/brows8.jpg' %}">
+                <img src="{% static 'main/image/brows8.jpg' %}">
+            </a>
+        </div>
+        <div class="sliderItem">
+            <a data-fancybox="images" href="{% static 'main/image/brows9.jpg' %}">
+                <img src="{% static 'main/image/brows9.jpg' %}">
+            </a>
+        </div>
+        <div class="sliderItem">
+            <a data-fancybox="images" href="{% static 'main/image/brows10.jpg' %}">
+                <img src="{% static 'main/image/brows10.jpg' %}">
+            </a>
+        </div>
+        <div class="sliderItem">
+            <a data-fancybox="images" href="{% static 'main/image/brows11.jpg' %}">
+                <img src="{% static 'main/image/brows11.jpg' %}">
+            </a>
+        </div>
+        <div class="sliderItem">
+            <a data-fancybox="images" href="{% static 'main/image/brows12.jpg' %}">
+                <img src="{% static 'main/image/brows12.jpg' %}">
+            </a>
+        </div>
+        <div class="sliderItem">
+            <a data-fancybox="images" href="{% static 'main/image/brows13.jpg' %}">
+                <img src="{% static 'main/image/brows13.jpg' %}">
+            </a>
+        </div>
+        <div class="sliderItem">
+            <a data-fancybox="images" href="{% static 'main/image/brows14.jpg' %}">
+                <img src="{% static 'main/image/brows14.jpg' %}">
+            </a>
+        </div>
+        <div class="sliderItem">
+            <a data-fancybox="images" href="{% static 'main/image/brows15.jpg' %}">
+                <img src="{% static 'main/image/brows15.jpg' %}">
+            </a>
+        </div>
+        <div class="sliderItem">
+            <a data-fancybox="images" href="{% static 'main/image/brows16.jpg' %}">
+                <img src="{% static 'main/image/brows16.jpg' %}">
+            </a>
+        </div>
+    </div>
+
+    <!-- Онлайн-запись / Открыть модальное окно -->
+    <div id="appointment">
+        <button id="btnAppointment">
+            <img class="rounded-circle" src="{% static 'favicon.png' %}">
+        </button>
+    </div>
+    <!-- Модальное окно -->
+    <div id="modalAppointment" class="modal-appointment">
+        <!-- Модальное содержание -->
+        <div class="modal-content-appointment">
+            <span class="close-appointment">&times;</span>
+            <h2>Форма в разработке</h2>
+            <br><br>
+            <p>Здесь можно будет записаться на услугу.</p>
+            <br><br>
+            <p>Здесь можно будет записаться на услугу.</p>
+            <br><br>
+            <p>Здесь можно будет записаться на услугу.</p>
+            <br><br>
+            <p>Здесь можно будет записаться на услугу.</p>
+            <br><br>
+            <p>Здесь можно будет записаться на услугу.</p>
+        </div>
+    </div>
+
+    <!-- fancybox -->
+    <script type="text/javascript">
+        //    $('[data-fancybox="images"]').fancybox({
+        //    });
+    </script>
+
+    <!--  owlCarousel  -->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#slider").owlCarousel({
+                margin: 10,
+                nav: true,
+                dots: false,
+                navText: ["<img src={% static 'main/image/prev.png' %}>", "<img src={% static 'main/image/next.png' %}>"],
+                loop: true,
+                autoplay: 1000,
+                onInitialized: addFancy,
+                responsive: {
+                    0: {
+                        items: 1,
+                    },
+                    600: {
+                        items: 2
+                    },
+                    1000: {
+                        items: 4
+                    }
+                }
+            });
+        });
+
+        function addFancy(event) {
+            var element = event.target;
+            var id = $(element).attr('id');
+            $(element).find(".owl-item.cloned a").each(function (indexCloned) {
+                var $clonedElem = $(this);
+                var link = $clonedElem.attr('href');
+                $clonedElem.attr('data-fancybox-trigger', id);
+                $clonedElem.attr('href', 'javascript:;');
+                $clonedElem.removeAttr('data-fancybox');
+                $(element).find(".owl-item:not(.cloned) a").each(function (indexReal) {
+                    if (link === $(this).attr('href')) {
+                        $clonedElem.attr('data-fancybox-index', indexReal);
+                    }
+                });
+            });
+        }
+    </script>
+
+    <!-- Accordion -->
+    <script type="text/javascript">
+        $('.accordion-item .heading').on('click', function (e) {
+            e.preventDefault();
+
+            // Add the correct active class
+            if ($(this).closest('.accordion-item').hasClass('active')) {
+                // Remove active classes
+                // $('.accordion-item').removeClass('active');
+                $(this).closest('.accordion-item').removeClass('active');
+            } else {
+                // Remove active classes
+                // $('.accordion-item').removeClass('active');
+
+                // Add the active class
+                $(this).closest('.accordion-item').addClass('active');
+            }
+
+            // Show the content
+            var $content = $(this).next();
+            $content.slideToggle(100);
+            // $('.accordion-item .content').not($content).slideUp('fast');
+        });
+    </script>
+
+{% endblock content %}

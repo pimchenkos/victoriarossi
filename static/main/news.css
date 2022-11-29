@@ -1,0 +1,71 @@
+.article{
+    margin: 0px 15% 20px 15%;
+    width: 70%;
+    overflow: hidden; 
+    background-color: #E4E3E2; 
+    border-color: #C4C4C4; 
+}
+
+.article a{
+    text-decoration: none;
+    color: rgba(168, 135, 115);
+}
+
+.article a:hover{
+    color: #cfb7c3;
+}
+
+.article img{
+    float: left;
+    padding-right: 20px;
+}
+
+.article-detail{
+    margin: 0px 15% 20px 15%;
+    width: 70%;   
+    background-color: #E4E3E2; 
+    border-color: #C4C4C4;  
+}
+
+.article-detail img{
+    max-width: 100%;
+}
+
+.paginator{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.paginator a{
+    border-color: rgba(168, 135, 115);
+    color: rgba(168, 135, 115);
+}
+
+.paginator a:hover{
+    border-color: rgba(168, 135, 115);
+    background-color: #cfb7c3;
+}
+
+.btn-current-page{
+    border-color: rgba(168, 135, 115);
+    background-color: rgba(168, 135, 115);;
+}
+
+/* Mobyle css */
+@media screen and (max-width: 1500px) {
+    .article{
+        margin: 0px 5% 20px 5%;
+        width: 90%;
+    }
+
+    .article-detail{
+        margin: 0px 5% 20px 5%;
+        width: 90%;    
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .article img{
+        width: 100% !important;
+    }
+}

@@ -1,0 +1,127 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <!-- favicon -->
+    <link rel="icon" type="image/png" href="{% static 'favicon.png' %}">
+
+    <title>Victoria Rossi - коррекция и окрашивание бровей.</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Yandex -->
+    <meta name="yandex-verification" content="73a03fe8f0914da9"/>
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+		(function (m, e, t, r, i, k, a) {
+			m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
+			m[i].l = 1 * new Date(); k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+		})
+			(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+		ym(61244035, "init", {
+			clickmap: true,
+			trackLinks: true,
+			accurateTrackBounce: true
+		});
+    </script>
+    <noscript>
+        <div><img src="https://mc.yandex.ru/watch/61244035" style="position:absolute; left:-9999px;" alt=""/></div>
+    </noscript>
+    <!-- /Yandex.Metrika counter -->
+
+    <!--  Captcha reload  -->
+    <script type="text/javascript" src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+          integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Cormorant+Infant&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'main/styles.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'main/accordion.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'main/icons.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'main/signIn.css' %}"/>
+
+</head>
+
+<body>
+
+<div class="wrapper-main">
+    <div class="content">
+        <div id="backgroundTop">
+            <div class="topLogo">
+                <a href="{% url 'index' %}"><img class="logoMain" src="{% static 'main/image/LogoMain.png' %}"></a>
+            </div>
+
+            <!-- Верхняя навигация -->
+            <div class="topnav" id="navbar">
+
+                <!-- Ссылки, выровненные по левому краю (по умолчанию) -->
+                <a href="{% url 'services' %}">Услуги</a>
+                <a href="{% url 'aboutMe' %}">Обо мне</a>
+
+                <!-- Ссылки, выровненные по правому краю -->
+                <div class="topnav-right">
+                    <a href="{% url 'news' %}">Новости</a>
+                    <a href="{% url 'contacts' %}">Контакты</a>
+                </div>
+            </div>
+        </div>
+
+        {% block content %}
+        {% endblock content %}
+    </div>
+
+    <div class="footer">
+        <footer>
+            <div class="wrapper">
+                <ul>
+                    <!-- <li class="facebook"><a href=""><i class="fa fa-facebook fa-2x" aria-hidden="true"></i></a></li>-->
+                    <!-- <li class="twitter"><a href=""><i class="fa fa-twitter fa-2x" aria-hidden="true"></i></a></li> -->
+                    <li class="instagram"><a target="_blank" href="https://www.instagram.com/browcouture.vr/"><i
+                            class="fa fa-instagram fa-2x" aria-hidden="true"></i></a></li>
+                    <li class="vk"><a target="_blank" href="https://vk.com/badvivi_rai"><i class="fa fa-vk fa-2x"
+                                                                                           aria-hidden="true"></i></a>
+                    </li>
+                    <li class="whatsapp"><a target="_blank" href="https://wa.me/79185098587?text="><i
+                            class="fa fa-whatsapp fa-2x" aria-hidden="true"></i></a></li>
+                </ul>
+            </div>
+            <p>&copy;Victoria Rossi brow couture {% now "Y" %}</p>
+        </footer>
+    </div>
+</div>
+<!--  Captcha reload  -->
+<script type="text/javascript">
+$(document).ready(function() {
+    // Add refresh button after field (this can be done in the template as well)
+    // {#$('img.captcha').after(#}
+    // {#        $('<a href="#void" class="captcha-refresh">Refresh</a>')#}
+    // {#        );#}
+
+    // Click-handler for the refresh-link
+    $('.captcha-refresh').click(function(){
+        var $form = $(this).parents('form');
+        var url = location.protocol + "//" + window.location.hostname + ":"
+                  + location.port + "/captcha/refresh/";
+
+        // Make the AJAX-call
+        $.getJSON(url, {}, function(json) {
+            $form.find('input[name="captcha_0"]').val(json.key);
+            $form.find('img.captcha').attr('src', json.image_url);
+        });
+
+        return false;
+    });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,336 @@
+.signIn {
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	/* font-size: 26px; */
+}
+
+.signIn a {
+	color: black;
+}
+
+.signIn a:hover {
+	text-decoration: none;
+	color: #fce6f1;
+}
+
+/*--------Dropdown menu--------------*/
+.dropbtn {
+	border-radius: 50%;
+	cursor: pointer;
+  }
+  
+  .dropdown {
+	position: relative;
+	display: inline-block;
+  }
+  
+  .dropdown-content {
+	display: none;
+	position: absolute;
+	/* background-color: #f1f1f1; */
+	background-color: rgb(243, 234, 226);
+	min-width: 120px;
+	overflow: auto;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	right: 0;
+	z-index: 2;
+  }
+  
+  .dropdown-content a {
+	color: black;
+	padding: 6px 16px;
+	text-decoration: none;
+	display: block;
+  }
+  
+  .dropdown a:hover {background-color: rgba(223, 189, 169, 0.6);}
+  
+  .show {display: block;}
+/*-----------------------------------*/
+
+/*------------Image Modal------------*/
+#myImg {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#myImg:hover {opacity: 0.7;}
+
+/* The Modal (background) */
+.modalPicture {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content-picture {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+/* Caption of Modal Image */
+#caption-picture {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+
+/* Add Animation */
+.modal-content-picture, #caption-picture {    
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+    from {-webkit-transform:scale(0)} 
+    to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close-picture {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 80px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close-picture:hover,
+.close-picture:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+    .modal-content-picture {
+        width: 100%;
+    }
+}
+/*-----------------------------------*/
+
+
+.form-errors {
+	color: maroon;
+	margin: 0px auto;
+	padding: 0px 10px 0px 10px;
+}
+
+#profile-form {
+	width: 100px;
+}
+
+#login-trigger {
+	font-size: 20px;
+}
+
+#profile {
+	font-size: 20px;
+	text-align: center;
+}
+
+#login-content {
+	display: none;
+	position: absolute;
+	top: 24px;
+	right: 0;
+	z-index: 999;
+	background:  rgba(203, 196, 189);
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#e4cfbf), to(rgba(203, 196, 189)));
+	/*background-image: -webkit-linear-gradient(top, #fff, #eee);
+	background-image: -moz-linear-gradient(top, #fff, #eee);
+	background-image: -ms-linear-gradient(top, #fff, #eee);
+	background-image: -o-linear-gradient(top, #fff, #eee);
+	background-image: linear-gradient(top, #fff, #eee); */
+	padding: 15px;
+	-moz-box-shadow: 0 2px 2px -1px rgba(0, 0, 0, .9);
+	-webkit-box-shadow: 0 2px 2px -1px rgba(0, 0, 0, .9);
+	box-shadow: 0 2px 2px -1px rgba(0, 0, 0, .9);
+	-moz-border-radius: 3px 0 3px 3px;
+	-webkit-border-radius: 3px 0 3px 3px;
+	border-radius: 3px 0 3px 3px;
+}
+
+/*--------------------*/
+
+#inputs input {
+	background: #f1f1f1;
+	padding: 6px 5px;
+	margin: 0 0 5px 0;
+	width: 250px;
+	border: 1px solid #ccc;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	-moz-box-shadow: 0 1px 1px #ccc inset;
+	-webkit-box-shadow: 0 1px 1px #ccc inset;
+	box-shadow: 0 1px 1px #ccc inset;
+}
+
+#inputs input:focus {
+	background-color: #fff;
+	border-color: #e8c291;
+	outline: none;
+	-moz-box-shadow: 0 0 0 1px #e8c291 inset;
+	-webkit-box-shadow: 0 0 0 1px #e8c291 inset;
+	box-shadow: 0 0 0 1px #e8c291 inset;
+}
+
+/*--------------------*/
+
+#login #actions {
+	margin: 10px 0 0 0;
+}
+
+.signIn .submit {
+	/* background-color: #b48064; */
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#7e7a76), to(#918f8e));
+	/* background-image: -webkit-linear-gradient(top, #e97171, #d14545);
+	background-image: -moz-linear-gradient(top, #e97171, #d14545);
+	background-image: -ms-linear-gradient(top, #e97171, #d14545);
+	background-image: -o-linear-gradient(top, #e97171, #d14545);
+	background-image: linear-gradient(top, #e97171, #d14545); */
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	/*text-shadow: 0 1px 0 rgba(0, 0, 0, .5);
+	-moz-box-shadow: 0 0 1px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.3) inset;
+	-webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.3) inset;
+	box-shadow: 0 0 1px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.3) inset; */
+	border: 1px solid #7e7a76;
+	float: left;
+	height: 30px;
+	padding: 0;
+	width: 100px;
+	cursor: pointer;
+	font: bold 14px Arial, Helvetica;
+	color: #fff;
+}
+
+.signIn .submit:hover, #login #submit:focus {
+	/* background-color: #e97171; */
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#a5a3a1), to(#8d8b89));
+	/* background-image: -webkit-linear-gradient(top, #d14545, #e97171);
+	background-image: -moz-linear-gradient(top, #d14545, #e97171);
+	background-image: -ms-linear-gradient(top, #d14545, #e97171);
+	background-image: -o-linear-gradient(top, #d14545, #e97171);
+	background-image: linear-gradient(top, #d14545, #e97171); */
+}
+
+.signIn .submit:active {
+	outline: none;
+	-moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;
+	-webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;
+	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;
+}
+
+.signIn .submit::-moz-focus-inner {
+	border: none;
+}
+
+.signIn label {
+	float: right;
+	line-height: 30px;
+}
+
+.signIn label input {
+	position: relative;
+	top: 2px;
+	right: 2px;
+}
+
+.btnSignUp {
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#7e7a76), to(#918f8e));
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	border: 1px solid #918f8e;
+	margin: 0 0 20px 10px;
+	height: 30px;
+	padding: 0 10px 0 10px;
+	/* width: 100%; */
+	cursor: pointer;
+	font: bold 14px Arial, Helvetica;
+	color: #fff;
+}
+
+.btnSignUp:hover, .btnSignUp:focus {
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#a5a3a1), to(#8d8b89));
+}
+
+.btnSignUp:active {
+	outline: none;
+	-moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;
+	-webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;
+	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;
+}
+
+.btnSignUp::-moz-focus-inner {
+	border: none;
+}
+
+.signUp {
+	margin: 0px 30% 40px 30%;
+}
+
+.signUp>h2 {
+	text-align: center;
+	color: #b38a22;
+	margin-bottom: 10px;
+}
+
+.captcha-refresh{
+	border: none;
+}
+
+.captcha-refresh:active, .captcha-refresh:focus{
+	outline: none;
+}
+
+.captcha-refresh::-moz-focus-inner{
+	border: 0;
+}
+
+.captcha-refresh img{
+	max-width: 30px;
+}
+
+@media screen and (max-width: 840px) {
+	.signUp {
+		margin: 0px 20% 40px 20%;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.signUp {
+		margin: 0px 15% 40px 15%;
+	}
+}

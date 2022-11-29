@@ -1,0 +1,23 @@
+{% extends 'frontend/main.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+{{ title }}
+{% endblock title %}
+
+{% block content %}
+<div class="article alert alert-light">
+    <!--    <a href="{% url 'news' %}">Назад</a>-->
+    {% if user.is_staff %}
+    <h2>Добавление новой статьи</h2>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.media }}
+        {{ form|crispy }}
+        <button type="submit" class="btnSignUp">Сохранить статью</button>
+    </form>
+    {% else %}
+    <h2>Эта страница недоступна</h2>
+    {% endif %}
+</div>
+{% endblock content %}

@@ -1,0 +1,89 @@
+#btnAppointment{
+  /* margin: 0px; */
+  /* background: e6eeee; */
+  z-index: 1;
+  position: fixed;
+  bottom: 100px;
+  right: 5px;
+  border-radius: 30%;
+  background-color:  rgba(168, 135, 115, 0.6);
+  border: none;
+  /* border-color: wheat; */
+}
+
+#btnAppointment:active, #btnAppointment:focus {
+  outline: none;
+}
+#btnAppointment::-moz-focus-inner {
+  border: 0;
+}
+
+#btnAppointment img{
+  width: 50px;
+}
+
+/* Модальный (фон) */
+.modal-appointment {
+  display: none; /* Скрыто по умолчанию */
+  position: fixed; /* Оставаться на месте */
+  z-index: 1; /* Поверх остальных окон */
+  padding-top: 100px; /* Расположение коробки */
+  left: 0;
+  top: 0;
+  width: 100%; /* Полная ширина */
+  height: 100%; /* Полная высота */
+  background-color: rgb(0,0,0); /* Цвет запасной вариант  */
+  background-color: rgba(0,0,0,0.8); /*Черный с непрозрачностью */
+}
+
+/* Модальное содержание */
+.modal-content-appointment {
+  position: relative;
+  background-color: rgb(218, 211, 204);
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 60%;
+  max-height: 90%;
+  border-radius: 10px;
+  overflow: auto;
+  text-align: center;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.7s;
+  animation-name: animatetop;
+  animation-duration: 0.7s
+}
+
+/* Добавить анимацию */
+@-webkit-keyframes animatetop {
+  from {bottom:-150px; opacity:100} 
+  to {bottom:0; opacity:100}
+}
+
+@keyframes animatetop {
+  from {bottom:-150px; opacity:100}
+  to {bottom:0; opacity:100}
+}
+
+/* Кнопка закрытия */
+.close-appointment {
+  color: #7a7a7a;
+  margin-top: -30px;
+  float: right;
+  font-size: 48px;
+  font-weight: bold;
+}
+
+.close-appointment:hover,
+.close-appointment:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+  .modal-content-appointment {
+      width: 90% !important;
+  }
+}

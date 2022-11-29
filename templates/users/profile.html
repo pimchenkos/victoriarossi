@@ -1,0 +1,64 @@
+{% extends 'frontend/main.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+Профиль
+{% endblock title %}
+
+{% block content %}
+
+<div class="signUp">
+    <h2>Профиль</h2>
+    <div class="text-muted pt-3">
+        <div style="text-align: center">
+            <p class="pb-3">
+                <strong class="d-block text-gray-dark">{{ user.username }}</strong>
+                <b>Email:</b> {{ user.email }}
+            </p>
+        </div>
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="pt-3" style="text-align: center">
+                <img class="rounded-circle" id="myImg" style="width:150px; height: 150px;" src="{{ user.imageprofile.image.url }}">
+                <input type="file" name="image" accept="image/*" id="id_image">
+                <!-- The Modal -->
+                <div id="myModalPicture" class="modalPicture">
+                    <span class="close-picture">×</span>
+                    <img class="modal-content-picture" id="img01" src="">
+                    <div id="caption-picture"></div>
+                </div>
+            </div>
+            <br>
+            {{ update_user|crispy }}
+            {{ profile|crispy }}
+            <br>
+            <button type="submit" class="btnSignUp">Сохранить изменения</button>
+        </form>
+    </div>
+</div>
+
+<!--Image Modal-->
+<script>
+        // Get the modal image
+        var modalImage = document.getElementById('myModalPicture');
+
+        // Get the image and insert it inside the modal - use its "alt" text as a caption
+        var img = document.getElementById('myImg');
+        var modalImg = document.getElementById("img01");
+        var captionText = document.getElementById("caption");
+        img.onclick = function(){
+            modalImage.style.display = "block";
+            modalImg.src = this.src;
+            captionText.innerHTML = this.alt;
+        }
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close-picture")[0];
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modalImage.style.display = "none";
+        }
+</script>
+
+{% endblock %}

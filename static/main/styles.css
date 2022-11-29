@@ -1,0 +1,509 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    /* margin: 0px; */
+    height: 100%;
+    font-family: 'EB Garamond', serif;
+    background-color: #ECEAE9;
+    /* background-color: rgba(228, 207, 191); */
+}
+
+.wrapper-main {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+.content {
+    flex: 1 0 auto;
+}
+
+.footer {
+    flex: 0 0 auto;
+}
+
+#backgroundTop {
+    margin: 0 auto;
+    padding-bottom: 30px;
+    -moz-background-size: 100% auto;
+    -webkit-background-size: 100% auto;
+    -o-background-size: 100% auto;
+    background-size: 100% auto;
+}
+
+.BackgroundImage {
+    height: 615px;
+    background-image: url("image/imageTop.jpg");
+}
+
+.topLogo {
+    position: relative;
+    top: 0px;
+    left: 0px;
+    height: 150px;
+    transform: none;
+    text-align: center;
+    background-color: rgba(203, 196, 189, 0.6);
+}
+
+#navbar {
+    overflow: hidden;
+}
+
+.topnav {
+    position: relative;
+    overflow: hidden;
+    background-color: rgba(171, 154, 140, 0.6);
+    z-index: 1;
+}
+
+.topnav a {
+    float: left;
+    color: black;
+    text-align: center;
+    padding: 5px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.topnav a:hover {
+    background-color: rgba(236, 234, 233, 0.6);
+    color: black;
+}
+
+.topnav a.active {
+    background-color: #ECEAE9;
+    color: white;
+}
+
+/* Logo */
+
+.logoMain {
+    height: 150px;
+}
+
+.topnav-right {
+    float: right;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.sticky+.content {
+    padding-top: 60px;
+}
+
+#citationWithPicture {
+    height: 440px;
+    margin: 0 auto;
+}
+
+#citationOne {
+    /* background-color: darkblue; */
+    float: left;
+    width: 50%;
+    height: 100%;
+    text-align: center;
+}
+
+#citationOne img {
+    max-width: 100%;
+    padding-top: 130px;
+}
+
+#pictureOne {
+    /* background-color: cyan; */
+    float: right;
+    width: 50%;
+    height: 100%;
+    text-align: left;
+}
+
+#pictureOne img {
+    width: 500px;
+    margin-top: 40px;
+}
+
+#parallaxOne {
+    margin: 0 auto;
+    text-align: left;
+    padding-top: 100px;
+    /* Используемое изображение */
+    background-image: url("image/parallaxOne.jpg");
+    /* Установите определенную высоту */
+    min-height: 500px;
+    /* Создайте эффект параллакса прокрутки */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#parallaxOne img {
+    width: 100%;
+    max-width: 700px;
+}
+
+#ServicesOne {
+    margin: 0 auto;
+    padding-top: 70px;
+    padding-bottom: 70px;
+    text-align: center;
+}
+
+#ServicesOne img {
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+#parallaxTwo {
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 100px;
+    /* Используемое изображение */
+    background-image: url("image/parallaxTwo.png");
+    /* Установите определенную высоту */
+    min-height: 500px;
+    /* Создайте эффект параллакса прокрутки */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#parallaxTwo img {
+    width: 100%;
+    max-width: 800px;
+}
+
+#descriptionOne {
+    text-align: center;
+}
+
+#descriptionOne img {
+    max-width: 100%;
+    padding-top: 20px;
+}
+
+#descriptionOne p {
+    font-size: 26px;
+    padding-bottom: 20px;
+}
+
+#starsPhotoHeader {
+    background-color: #AB9A8C;
+    text-align: center;
+}
+
+#starsPhotoHeader img {
+    max-width: 100%;
+}
+
+#starsPhoto {
+    margin: 20px auto;
+    text-align: center;
+}
+
+#starsPhoto figure {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+#sliderHeader {
+    text-align: center;
+    padding-top: 20px;
+}
+
+.slider {
+    margin: 0 auto;
+    margin-bottom: 50px;
+    max-width: 1200px;
+    /* background-color: khaki; */
+}
+
+/* .sliderItem {
+    margin: 0px 15px 0px 10px;
+} */
+
+/* .sliderItem img {
+    margin: auto;
+    left: 0px;
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+    max-width: 300px;
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    filter: grayscale(100%);
+    filter: gray;
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    -o-transition: all 1s;
+    transition: all 1s;
+}
+
+.sliderItem img:hover {
+    -webkit-filter: none;
+    -moz-filter: none;
+    -ms-filter: none;
+    -o-filter: none;
+    filter: none;
+    filter: none;
+} */
+
+.owl-carousel .owl-stage-outer {
+    position: relative;
+}
+
+.owl-nav {
+    position: absolute;
+    width: 100%;
+    height: 0px;
+    top: 40%;
+    z-index: 1;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    justify-content: space-between;
+}
+
+.owl-prev {
+    padding-bottom: 50px;
+    background-size: cover;
+}
+
+.owl-prev:focus {
+    outline: none;
+}
+
+.owl-next {
+    background-size: cover;
+}
+
+.owl-next:focus {
+    outline: none;
+}
+
+.owl-dot:focus {
+    outline: none;
+}
+
+
+.footer {
+    position: relative;
+    height: 100px;
+    width: 100%;
+    margin: 0 auto;
+    background-color: #AB9A8C;
+}
+
+footer p {
+    float: left;
+    padding-top: 36px;
+    padding-left: 20px;
+    font-size: 20px;
+}
+
+/*----------- Mobyle css --------------*/
+
+@media screen and (max-width: 1000px) {
+    .BackgroundImage {
+        height: 500px;
+    }
+    #citationOne img {
+        /* width: 400px; */
+        padding-top: 160px;
+    }
+    #pictureOne img {
+        width: 400px;
+        margin-top: 80px;
+    }
+}
+
+@media screen and (max-width: 840px) {
+    .BackgroundImage {
+        height: 350px;
+    }
+    #citationOne {
+        width: 100%;
+        height: 40%;
+    }
+    #citationOne img {
+        padding-top: 20px;
+    }
+    #pictureOne {
+        float: inline-end;
+        width: 100%;
+        height: 60%;
+        text-align: center;
+    }
+    #pictureOne img {
+        width: 350px;
+        margin-top: 0px;
+    }
+}
+
+/* Адаптивное меню навигации (для мобильных устройств) */
+
+@media screen and (max-width: 600px) {
+    .topnav a, .topnav-right {
+        float: none;
+        display: block;
+    }
+    .BackgroundImage {
+        width: 100%;
+        height: 240px;
+    }
+    .topLogo {
+        height: 80px;
+    }
+    .logoMain {
+        height: 80px;
+    }
+    .sticky {
+        position: inherit;
+    }
+    #parallaxOne {
+        margin: 0 auto;
+        min-height: 300px;
+        padding-top: 100px;
+        background-image: url("image/parallaxOneMini.jpg") !important;
+        /* Убираем эффект параллакса прокрутки */
+        background-attachment: initial;
+        background-size: initial;
+    }
+    #parallaxTwo {
+        margin: 0 auto;
+        min-height: 300px;
+        padding-top: 100px;
+        background-image: url("image/parallaxTwoMini.png") !important;
+        /* Убираем эффект параллакса прокрутки */
+        background-attachment: initial;
+        background-size: initial;
+    }
+    /* .sliderItem img {
+        max-width: 80%;
+    } */
+    footer {
+        position: relative;
+        text-align: center;
+        margin-top: -20px;
+    }
+    footer p {
+        position: relative;
+        float: none;
+        padding-top: 0px;
+        margin-bottom: 0px;
+        font-size: 20px;
+    }
+    .imageAboutMe img {
+        max-width: 100% !important;
+    }
+    #logoAboutMe img {
+        max-width: 100% !important;
+    }
+    .imageService img {
+        max-width: 100% !important;
+    }
+}
+
+/* Other pages */
+
+.contacts h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.contacts h4 {
+    text-align: center;
+}
+
+.contacts a {
+    color: black;
+}
+
+.contacts a:hover {
+    text-decoration: none;
+    color: rgba(168, 135, 115);
+}
+
+.contacts iframe {
+    margin-top: 50px;
+}
+
+.aboutMe {
+    margin: 0px 5% 50px 5%;
+    min-height: 800px;
+}
+
+.aboutMe p {
+    font-size: 20px;
+    text-indent: 25px;
+}
+
+.imageAboutMe {
+    float: right;
+}
+
+.imageAboutMe img {
+    max-width: 400px;
+}
+
+#logoAboutMe {
+    text-align: center;
+}
+
+#logoAboutMe img {
+    max-width: 550px;
+}
+
+.services {
+    margin: 0px 10% 50px 10%;
+}
+
+.services h3 {
+    font-weight: 600;
+}
+
+.services p {
+    font-size: 20px;
+    text-indent: 25px;
+}
+
+.services li {
+    font-size: 20px;
+    margin-left: 40px;
+}
+
+.imageService {
+    float: right;
+}
+
+.textService {
+    min-height: 320px;
+}
+
+.imageService img {
+    max-width: 320px;
+}
+
+.imageBorder {
+    border: 1px;
+    border-radius: 20px;
+    border-style: solid;
+    border-color: gray;
+}

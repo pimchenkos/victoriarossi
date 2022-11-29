@@ -1,0 +1,21 @@
+{% extends 'frontend/main.html' %}
+
+{% block title %}
+{{ title }}
+{% endblock title %}
+
+{% block content %}
+<div class="article-detail alert alert-light">
+<!--    <a href="{% url 'news' %}">Назад</a>-->
+    <h1>{{ object.title }}</h1>
+    <span class="text-muted">{{ object.date }}</span>
+    {% if user.is_staff %}
+    <a href="{% url 'news-update' object.id %}" class="btn btn-outline-info">Редактировать</a>
+    <a href="{% url 'news-delete' object.id %}" class="btn btn-outline-danger">Удалить</a>
+    {% endif %}
+    <br><br>
+    <p style="text-align:center"><img style="width:500px; max-width:100%;" src="{{ object.image.url }}"/></p>
+    <p>{% autoescape off %} {{ object.text }} {% endautoescape %}</p>
+    <hr>
+</div>
+{% endblock content %}

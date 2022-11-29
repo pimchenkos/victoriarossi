@@ -1,0 +1,21 @@
+{% extends 'frontend/main.html' %}
+
+{% block title %}
+{{ title }}
+{% endblock title %}
+
+{% block content %}
+<div class="article alert alert-light">
+    <!--    <a href="{% url 'news' %}">Назад</a>-->
+    {% if user.is_staff %}
+    <h2>Вы точно хотите удалить статью "{{ object.title }}"?</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-outline-danger">Да, удалить</button>
+        <a href="{% url 'news-detail' object.id %}" class="btn btn-outline-info">Нет, отмена</a>
+    </form>
+    {% else %}
+    <h2>Эта страница недоступна</h2>
+    {% endif %}
+</div>
+{% endblock content %}

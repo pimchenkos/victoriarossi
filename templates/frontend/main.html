@@ -1,0 +1,235 @@
+{% load static %}
+{#{% load crispy_forms_tags %}#}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <!-- favicon -->
+    <link rel="icon" type="image/png" href="{% static 'favicon.png' %}">
+
+    <title>{% block title %}{% endblock title %}</title>
+
+    <meta name="Description" content="Сертифицированный мастер бровист, окрашивание хной, долговременная укладка.">
+
+    <meta name="Keywords" content="брови, идеальные брови, архитектура бровей, где сделать брови, как правильно сделать брови,
+	обучение брови, курсы архитектура бровей, микроблейдинг, биотатуаж бровей, окрашивание бровей хной, окрашивание бровей краской, 
+	моделирование бровей, моделирование бровей Ростов, коррекция бровей, коррекция бровей Ростов, брови Ростов">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Yandex -->
+    <meta name="yandex-verification" content="73a03fe8f0914da9"/>
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function (m, e, t, r, i, k, a) {
+            m[i] = m[i] || function () {
+                (m[i].a = m[i].a || []).push(arguments)
+            };
+            m[i].l = 1 * new Date();
+            k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+        })
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym(61244035, "init", {
+            clickmap: true,
+            trackLinks: true,
+            accurateTrackBounce: true
+        });
+    </script>
+    <noscript>
+        <div><img src="https://mc.yandex.ru/watch/61244035" style="position:absolute; left:-9999px;" alt=""/></div>
+    </noscript>
+    <!-- /Yandex.Metrika counter -->
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+          integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&family=Playfair+Display&family=Roboto:wght@100&display=swap"
+          rel="stylesheet">
+
+    <!--  fancybox  -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"/>
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+
+    <!--  owlCarousel  -->
+    <link rel="stylesheet" type="text/css" href="{% static 'main/OwlCarousel/owl.carousel.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'main/OwlCarousel/owl.theme.default.min.css' %}">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="{% static 'main/OwlCarousel/owl.carousel.min.js' %}"></script>
+
+
+    <!--  styles CSS  -->
+    <link rel="stylesheet" type="text/css" href="{% static 'main/styles.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'main/accordion.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'main/icons.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'main/signIn.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'main/news.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'main/modalDialog.css' %}"/>
+
+</head>
+
+<body>
+<div class="wrapper-main">
+    <div class="content">
+        <div id="backgroundTop" {% block class %} {% endblock %}>
+            <div class="topLogo">
+                <div id="authMenu"></div>
+                <nav class="signIn">
+                    {% if user.is_authenticated %}
+                        <div class="dropdown">
+                            <a onclick="DropdownFunction()" class="dropbtn">
+                                <img class="rounded-circle dropbtn" style="width:50px; height: 50px;"
+                                     src="{{ user.imageprofile.image.url }}">
+                            </a>
+                            <div id="myDropdown" class="dropdown-content">
+                                <a href="{% url 'profile' %}">Профиль</a>
+                                {% if user.is_staff %}
+                                    <a href="{% url 'clients' %}">Клиенты</a>
+                                    <a href="{% url 'admin:index' %}">Админка</a>
+                                {% endif %}
+                                <form id="logout" action="{% url 'account_logout' %}" method="POST">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="next" value="{{ request.get_full_path }}"/>
+                                    <a href="#" onclick="document.getElementById('logout').submit(); return false;">Выйти</a>
+                                </form>
+                            </div>
+                        </div>
+                    {% else %}
+                        <a id="login-trigger" href="#">
+                            Войти
+                        </a>
+                        <div id="login-content">
+                            <form id="login" action="{% url 'account_login' %}" method="POST">
+                                {% csrf_token %}
+                                <input type="hidden" name="next" value="{{ request.get_full_path }}"/>
+                                <fieldset id="inputs">
+                                    <input type="email" name="login" placeholder="Ваш email" required>
+                                    <input type="password" name="password" placeholder="Пароль" required>
+                                </fieldset>
+                                <fieldset id="actions">
+                                    <button type="submit" class="submit">Войти</button>
+                                    <label><input type="checkbox" name="remember">Запомнить</label>
+                                </fieldset>
+                            </form>
+                            <a href="{% url 'account_signup' %}" style="margin-right:40px">Регистрация</a>
+                            <a class="button secondaryAction" href="{% url 'account_reset_password' %}">Забыли
+                                пароль?</a>
+                        </div>
+                    {% endif %}
+                </nav>
+                <a href="{% url 'index' %}"><img class="logoMain" src="{% static 'main/image/LogoMain.png' %}"></a>
+            </div>
+            <!-- Верхняя навигация -->
+            <div class="topnav" id="navbar">
+
+                <!-- Ссылки, выровненные по левому краю (по умолчанию) -->
+                <a href="{% url 'services' %}">Услуги</a>
+                <a href="{% url 'aboutMe' %}">Обо мне</a>
+
+                <!-- Ссылки, выровненные по правому краю -->
+                <div class="topnav-right">
+                    <a href="{% url 'news' %}">Новости</a>
+                    <a href="{% url 'contacts' %}">Контакты</a>
+                </div>
+            </div>
+        </div>
+
+        {% block content %}
+        {% endblock content %}
+    </div>
+
+    <div class="footer">
+        <footer>
+            <div class="wrapper">
+                <ul>
+                    <!-- <li class="facebook"><a href=""><i class="fa fa-facebook fa-2x" aria-hidden="true"></i></a></li>-->
+                    <!-- <li class="twitter"><a href=""><i class="fa fa-twitter fa-2x" aria-hidden="true"></i></a></li> -->
+                    <li class="instagram"><a target="_blank" href="https://www.instagram.com/browcouture.vr/"><i
+                            class="fa fa-instagram fa-2x" aria-hidden="true"></i></a></li>
+                    <li class="vk"><a target="_blank" href="https://vk.com/badvivi_rai"><i class="fa fa-vk fa-2x"
+                                                                                           aria-hidden="true"></i></a>
+                    </li>
+                    <li class="whatsapp"><a target="_blank" href="https://wa.me/79185098587?text="><i
+                            class="fa fa-whatsapp fa-2x" aria-hidden="true"></i></a></li>
+                </ul>
+            </div>
+            <p>&copy;Victoria Rossi brow couture {% now "Y" %}</p>
+        </footer>
+    </div>
+</div>
+<a href="#" style="z-index: 2" class="scrollup">Наверх</a>
+
+
+<script src="{% static "frontend/main.js" %}"></script>
+
+<!--Main menu-->
+<script type="text/javascript">
+    window.onscroll = function () {
+        MainFunction();
+    };
+
+    var navbar = document.getElementById("navbar");
+    var sticky = navbar.offsetTop;
+
+    function MainFunction() {
+        if (window.pageYOffset >= sticky) {
+            navbar.classList.add("sticky");
+        } else {
+            navbar.classList.remove("sticky");
+        }
+        ;
+    };
+</script>
+
+<!-- Sign In -->
+<script>
+    $(document).ready(function () {
+        $('#login-trigger').click(function () {
+            $(this).next('#login-content').slideToggle();
+            $(this).toggleClass('active');
+        })
+
+        $(document).mouseup(function (e) { // событие клика по веб-документу
+            var div = $("#login-content");// тут указываем ID элемента
+            var btn = $("#login-trigger");// тут указываем ID кнопки
+            if (!div.is(e.target) && !btn.is(e.target) // если клик был не по нашему блоку
+                && div.has(e.target).length === 0) { // и не по его дочерним элементам
+                div.hide(); // скрываем его
+            }
+        });
+    });
+</script>
+
+<!--Ссылка "Наверх"-->
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 100) {
+                $('.scrollup').fadeIn();
+            } else {
+                $('.scrollup').fadeOut();
+            }
+        });
+
+        $('.scrollup').click(function () {
+            $("html, body").animate({scrollTop: 0}, 600);
+            return false;
+        });
+
+    });
+</script>
+
+<!-- Modal dialog -->
+<script type="text/javascript" src="{% static 'main/modalDialog.js' %}"></script>
+
+</body>
+
+</html>
