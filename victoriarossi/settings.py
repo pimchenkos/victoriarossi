@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'phonenumber_field',
     'drf_spectacular',
+    'drf_spectacular_sidecar',
     'backend',
     'frontend',
     'users',
@@ -194,4 +195,24 @@ CAPTCHA_CHALLENGE_FUNCT = 'captcha.helpers.random_char_challenge'
 
 ACCOUNT_FORMS = {
     'signup': 'users.forms.SignUp',
+}
+
+REST_FRAMEWORK = {
+    'DEFAULT_RENDERER_CLASSES': (
+        'rest_framework.renderers.JSONRenderer',
+        'rest_framework.renderers.BrowsableAPIRenderer',
+    ),
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+    'DATETIME_FORMAT': "%m/%d/%Y %I:%M%P",
+    'DEFAULT_AUTHENTICATION_CLASSES': ['rest_framework.authentication.TokenAuthentication', ],
+}
+
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'API - Project "Victoria Rossi"',
+    # 'DESCRIPTION': 'Your project description',
+    'VERSION': '1.0.0',
+    'SERVE_INCLUDE_SCHEMA': False,
+    'SWAGGER_UI_DIST': 'SIDECAR',
+    'SWAGGER_UI_FAVICON_HREF': 'SIDECAR',
+    'REDOC_DIST': 'SIDECAR',
 }
